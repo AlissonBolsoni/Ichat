@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ChatModule{
 
     companion object {
-        private const val URL = "http://192.168.1.103:8080/"
+        private const val URL = "http://192.168.15.46:8080/"
     }
 
     @Provides

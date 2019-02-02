@@ -3,6 +3,7 @@ package br.com.alisson.ichat.ui.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import br.com.alisson.ichat.R
+import br.com.alisson.ichat.app.ChatApplication
 import br.com.alisson.ichat.data.entity.ObMessage
 import br.com.alisson.ichat.injection.components.ChatComponent
 import br.com.alisson.ichat.preferences.Preferences
@@ -26,6 +27,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val app = application as ChatApplication
+        component = app.getComponent()
+
         component.inject(this)
 
         val sp = Preferences(this)
@@ -35,9 +39,6 @@ class MainActivity : AppCompatActivity() {
 
         adapter = MessageAdapter(this, ArrayList())
         main_list.adapter = adapter
-
-//        chatService = ChatModule.getChatService()
-
 
         listenMessage()
 
