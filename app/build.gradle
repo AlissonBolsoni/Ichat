@@ -42,4 +42,7 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:2.20"
     kapt "com.google.dagger:dagger-compiler:2.20"
 
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
 }
